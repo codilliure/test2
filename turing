@@ -1,0 +1,20 @@
+#!/bin/bash
+if [ $# -eq 1 ]
+then
+  user="bombe"
+else
+  user=$2
+fi
+
+case "$1" in
+  "test")
+    ssh -t $user@94.23.23.162 -p 33533 "ssh -t $user@10.0.0.102 -p 22" ;;
+  *)
+  echo "Usa'm així:"
+  echo "  mathison nom_maquina username"
+  echo ""
+  echo "  on nom màquina pot ser"
+  echo "   1) test"
+  ;;
+esac
+
